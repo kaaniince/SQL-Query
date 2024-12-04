@@ -2,13 +2,13 @@
 
 ```SQL
 (
-    SELECT first_name
-    FROM actor
+    SELECT a.first_name
+    FROM actor a
 )
 UNION
 (
-    SELECT first_name
-    FROM customer
+    SELECT c.first_name
+    FROM customer c;
 )
 
 ```
@@ -17,13 +17,13 @@ UNION
 
 ```SQL
 (
-    SELECT first_name
-    FROM actor
+    SELECT a.first_name
+    FROM actor a
 )
 INTERSECT
 (
-    SELECT first_name
-    FROM customer
+    SELECT c.first_name
+    FROM customer c;
 )
 ```
 
@@ -31,13 +31,13 @@ INTERSECT
 
 ```SQL
 (
-    SELECT first_name
-    FROM actor
+    SELECT a.first_name
+    FROM actor a
 )
 EXCEPT
 (
-    SELECT first_name
-    FROM customer
+    SELECT c.first_name
+    FROM customer c;
 )
 ```
 
@@ -45,32 +45,38 @@ EXCEPT
 
 ```SQL
 (
-    SELECT first_name FROM actor
+    SELECT a.first_name
+    FROM actor a
 )
 
     UNION ALL
 
 (
-    SELECT first_name FROM customer
+    SELECT c.first_name
+    FROM customer c;
 )
 -----------------------------------------------
 (
-    SELECT first_name FROM actor
+    SELECT a.first_name
+    FROM actor a
 )
 
     INTERSECT ALL
 
 (
-    SELECT first_name FROM customer
+    SELECT c.first_name
+    FROM customer c;
 )
 -----------------------------------------------
 (
-    SELECT first_name FROM actor
+     SELECT a.first_name
+    FROM actor a
 )
 
     EXCEPT ALL
 
 (
-    SELECT first_name FROM customer
+    SELECT c.first_name
+    FROM customer c;
 )
 ```
